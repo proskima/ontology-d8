@@ -1,0 +1,1495 @@
+Prefix: : <http://www.qu.edu.qa/proskima/proskima.owl>
+Prefix: dc: <http://purl.org/dc/elements/1.1/>
+Prefix: owl: <http://www.w3.org/2002/07/owl#:>
+Prefix: psk: <http://www.qu.edu.qa/proskima/proskima#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+
+Ontology: <http://www.qu.edu.qa/proskima/proskima.owl>
+
+
+AnnotationProperty: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled>
+
+    
+AnnotationProperty: rdfs:comment
+
+    
+AnnotationProperty: rdfs:label
+
+    
+Datatype: xsd:boolean
+
+    
+Datatype: xsd:double
+
+    
+Datatype: xsd:int
+
+    
+Datatype: xsd:integer
+
+    
+Datatype: xsd:string
+
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#appliedForJob>
+
+    Domain: 
+        psk:Student
+    
+    Range: 
+        psk:Occupation
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#belongsToMatchingOutcome>
+
+    Domain: 
+        psk:Competency
+    
+    Range: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#MatchingOutcome>
+    
+    InverseOf: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#hasMatchedCompetency>
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#enroledInCourse>
+
+    SubPropertyChain: 
+        psk:selects o psk:consistsOfCourse
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#forOccupation>
+
+    Domain: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#Application>
+    
+    Range: 
+        psk:Occupation
+    
+    InverseOf: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#is-An-OccupationForApplication>
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#generatesCompetency>
+
+    SubPropertyChain: 
+        psk:generatesLearningOutcome o psk:equivalentToCompetency
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#gradedCompetency>
+
+    Domain: 
+        psk:Enrolment
+    
+    Range: 
+        psk:Competency
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#hasApplication>
+
+    Domain: 
+        psk:Student
+    
+    Range: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#Application>
+    
+    InverseOf: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#is-An-ApplicationFor>
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#hasFailedOutcome>
+
+    DisjointWith: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#hasSuccessfulOutcome>
+    
+    Characteristics: 
+        Functional,
+        InverseFunctional
+    
+    Domain: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#MatchingOutcome>
+    
+    Range: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#MatchingState>
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#hasGainedCompetency>
+
+    Domain: 
+        psk:Student
+    
+    Range: 
+        psk:Competency
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#hasImportanceLevel>
+
+    Domain: 
+        psk:CompetencyRequirement
+    
+    Range: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#ImportanceLevel>
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#hasMappingLevel>
+
+    Domain: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#CompetencyMapping>
+    
+    Range: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#MappingLevel>
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#hasMatchedCompetency>
+
+    Domain: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#MatchingOutcome>
+    
+    Range: 
+        psk:Competency
+    
+    InverseOf: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#belongsToMatchingOutcome>
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#hasMatchingOutcome>
+
+    Domain: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#Application>
+    
+    Range: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#MatchingOutcome>
+    
+    InverseOf: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#is-A-MatchingOutcomeFor>
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#hasMatchingResult>
+
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#hasMatchingState>
+
+    Domain: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#MatchingOutcome>
+    
+    Range: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#MatchingState>
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#hasSuccessfulOutcome>
+
+    DisjointWith: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#hasFailedOutcome>
+    
+    Domain: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#MatchingOutcome>
+    
+    Range: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#MatchingState>
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#is-A-CompetencyForEnrollment>
+
+    Domain: 
+        psk:Competency
+    
+    Range: 
+        psk:Enrolment
+    
+    InverseOf: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#is-An-EnrolmentForCompetency>
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#is-A-CompetencyRequiredByOccupation>
+
+    Domain: 
+        psk:Competency
+    
+    Range: 
+        psk:Occupation
+    
+    InverseOf: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#requiresCompetency>
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#is-A-CompetencyRequiredFor>
+
+    Domain: 
+        psk:Competency
+    
+    Range: 
+        psk:CompetencyRequirement
+    
+    InverseOf: 
+        psk:forCompetency
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#is-A-MatchingOutcomeFor>
+
+    Domain: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#MatchingOutcome>
+    
+    Range: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#Application>
+    
+    InverseOf: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#hasMatchingOutcome>
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#is-An-ApplicationFor>
+
+    Domain: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#Application>
+    
+    Range: 
+        psk:Student
+    
+    InverseOf: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#hasApplication>
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#is-An-EnrolmentForCompetency>
+
+    Domain: 
+        psk:Enrolment
+    
+    Range: 
+        psk:Competency
+    
+    InverseOf: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#is-A-CompetencyForEnrollment>
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#is-An-OccupationForApplication>
+
+    Domain: 
+        psk:Occupation
+    
+    Range: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#Application>
+    
+    InverseOf: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#forOccupation>
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#mapsOccupationCompetency>
+
+    Domain: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#CompetencyMapping>
+    
+    Range: 
+        psk:Competency
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#mapsStudentCompetency>
+
+    Domain: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#CompetencyMapping>
+    
+    Range: 
+        psk:Competency
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#matchedOccupation>
+
+    Domain: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#Application>
+    
+    Range: 
+        psk:Occupation
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#requiresCompetency>
+
+    Domain: 
+        psk:Occupation
+    
+    Range: 
+        psk:Competency
+    
+    InverseOf: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#is-A-CompetencyRequiredByOccupation>
+    
+    
+ObjectProperty: <http://www.qu.edu.qa/proskima/proskima.owl#requiresGrade>
+
+    SubPropertyChain: 
+        psk:requiresCompetencyLevel o psk:equivalentToGrade
+    
+    Domain: 
+        psk:CompetencyRequirement
+    
+    Range: 
+        psk:Grade
+    
+    
+ObjectProperty: psk:belongsToStudent
+
+    Domain: 
+        psk:Transcript
+    
+    Range: 
+        psk:Student
+    
+    InverseOf: 
+        psk:hasTranscript
+    
+    
+ObjectProperty: psk:consistsOfCourse
+
+    Domain: 
+        psk:StudyPlan
+    
+    Range: 
+        psk:Course
+    
+    InverseOf: 
+        psk:isPartOfStudyPlan
+    
+    
+ObjectProperty: psk:consistsOfEnrolment
+
+    Domain: 
+        psk:Transcript
+    
+    Range: 
+        psk:Enrolment
+    
+    InverseOf: 
+        psk:isPartOfTranscript
+    
+    
+ObjectProperty: psk:equivalentToCompetency
+
+    Domain: 
+        psk:LearningOutcome
+    
+    Range: 
+        psk:Competency
+    
+    InverseOf: 
+        psk:equivalentToLearningOutcome
+    
+    
+ObjectProperty: psk:equivalentToGrade
+
+    Domain: 
+        psk:CompetencyLevel
+    
+    Range: 
+        psk:Grade
+    
+    InverseOf: 
+        psk:isEquivalentToCompetencyLevel
+    
+    
+ObjectProperty: psk:equivalentToLearningOutcome
+
+    Domain: 
+        psk:Competency
+    
+    Range: 
+        psk:LearningOutcome
+    
+    InverseOf: 
+        psk:equivalentToCompetency
+    
+    
+ObjectProperty: psk:forCompetency
+
+    Domain: 
+        psk:CompetencyRequirement
+    
+    Range: 
+        psk:Competency
+    
+    InverseOf: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#is-A-CompetencyRequiredFor>
+    
+    
+ObjectProperty: psk:forCompetencyRequirement
+
+    Domain: 
+        psk:CompetencyLevel
+    
+    Range: 
+        psk:CompetencyRequirement
+    
+    InverseOf: 
+        psk:requiresCompetencyLevel
+    
+    
+ObjectProperty: psk:forEnrolment
+
+    Domain: 
+        psk:Grade
+    
+    Range: 
+        psk:Enrolment
+    
+    InverseOf: 
+        psk:hasGrade
+    
+    
+ObjectProperty: psk:generatedBy
+
+    Domain: 
+        psk:LearningOutcome
+    
+    Range: 
+        psk:Course
+    
+    InverseOf: 
+        psk:generatesLearningOutcome
+    
+    
+ObjectProperty: psk:generatesLearningOutcome
+
+    Domain: 
+        psk:Course
+    
+    Range: 
+        psk:LearningOutcome
+    
+    InverseOf: 
+        psk:generatedBy
+    
+    
+ObjectProperty: psk:hasCompetencyRequirement
+
+    Domain: 
+        psk:Occupation
+    
+    Range: 
+        psk:CompetencyRequirement
+    
+    InverseOf: 
+        psk:is-A-CompetencyRequirementFor
+    
+    
+ObjectProperty: psk:hasGrade
+
+    Domain: 
+        psk:Enrolment
+    
+    Range: 
+        psk:Grade
+    
+    InverseOf: 
+        psk:forEnrolment
+    
+    
+ObjectProperty: psk:hasTranscript
+
+    Domain: 
+        psk:Student
+    
+    Range: 
+        psk:Transcript
+    
+    InverseOf: 
+        psk:belongsToStudent
+    
+    
+ObjectProperty: psk:inCourse
+
+    Domain: 
+        psk:Enrolment
+    
+    Range: 
+        psk:Course
+    
+    InverseOf: 
+        psk:isPartOfEnrolment
+    
+    
+ObjectProperty: psk:is-A-CompetencyRequirementFor
+
+    Domain: 
+        psk:CompetencyRequirement
+    
+    Range: 
+        psk:Occupation
+    
+    InverseOf: 
+        psk:hasCompetencyRequirement
+    
+    
+ObjectProperty: psk:isEquivalentToCompetencyLevel
+
+    InverseOf: 
+        psk:equivalentToGrade
+    
+    
+ObjectProperty: psk:isPartOfEnrolment
+
+    Domain: 
+        psk:Course
+    
+    Range: 
+        psk:Enrolment
+    
+    InverseOf: 
+        psk:inCourse
+    
+    
+ObjectProperty: psk:isPartOfStudyPlan
+
+    Domain: 
+        psk:Course
+    
+    Range: 
+        psk:StudyPlan
+    
+    InverseOf: 
+        psk:consistsOfCourse
+    
+    
+ObjectProperty: psk:isPartOfTranscript
+
+    Domain: 
+        psk:Enrolment
+    
+    Range: 
+        psk:Transcript
+    
+    InverseOf: 
+        psk:consistsOfEnrolment
+    
+    
+ObjectProperty: psk:isSubCompetencyOf
+
+    Domain: 
+        psk:Competency
+    
+    Range: 
+        psk:Competency
+    
+    InverseOf: 
+        psk:isSuperCompetencyOf
+    
+    
+ObjectProperty: psk:isSuperCompetencyOf
+
+    Domain: 
+        psk:Competency
+    
+    Range: 
+        psk:Competency
+    
+    InverseOf: 
+        psk:isSubCompetencyOf
+    
+    
+ObjectProperty: psk:requiresCompetencyLevel
+
+    Domain: 
+        psk:CompetencyRequirement
+    
+    Range: 
+        psk:CompetencyLevel
+    
+    InverseOf: 
+        psk:forCompetencyRequirement
+    
+    
+ObjectProperty: psk:selectedBy
+
+    Domain: 
+        psk:StudyPlan
+    
+    Range: 
+        psk:Student
+    
+    InverseOf: 
+        psk:selects
+    
+    
+ObjectProperty: psk:selects
+
+    Domain: 
+        psk:Student
+    
+    Range: 
+        psk:StudyPlan
+    
+    InverseOf: 
+        psk:selectedBy
+    
+    
+DataProperty: <http://www.qu.edu.qa/proskima/proskima.owl#hasCompetencyLevelWeight>
+
+    Domain: 
+        psk:CompetencyRequirement
+    
+    Range: 
+        xsd:double
+    
+    
+DataProperty: <http://www.qu.edu.qa/proskima/proskima.owl#hasImportanceLevelWeight>
+
+    Domain: 
+        psk:CompetencyRequirement
+    
+    Range: 
+        xsd:double
+    
+    
+DataProperty: <http://www.qu.edu.qa/proskima/proskima.owl#hasMappingLevelWeight>
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#CompetencyMapping>
+    
+    Range: 
+        xsd:double
+    
+    
+DataProperty: <http://www.qu.edu.qa/proskima/proskima.owl#hasName>
+
+    
+DataProperty: <http://www.qu.edu.qa/proskima/proskima.owl#hasScore>
+
+    
+DataProperty: <http://www.qu.edu.qa/proskima/proskima.owl#matching_found>
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#MatchingOutcome>
+    
+    Range: 
+        xsd:boolean
+    
+    
+DataProperty: psk:code
+
+    
+DataProperty: psk:id
+
+    
+Class: <http://www.qu.edu.qa/proskima/proskima.owl#Application>
+
+    SubClassOf: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#forOccupation> some psk:Occupation,
+        <http://www.qu.edu.qa/proskima/proskima.owl#hasMatchingOutcome> some <http://www.qu.edu.qa/proskima/proskima.owl#MatchingOutcome>,
+        <http://www.qu.edu.qa/proskima/proskima.owl#matchedOccupation> some psk:Occupation,
+        <http://www.qu.edu.qa/proskima/proskima.owl#hasMatchingOutcome> max 1 <http://www.qu.edu.qa/proskima/proskima.owl#MatchingOutcome>
+    
+    HasKey: 
+        psk:id
+    
+    
+Class: <http://www.qu.edu.qa/proskima/proskima.owl#CompetencyMapping>
+
+    SubClassOf: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#hasMappingLevel> some <http://www.qu.edu.qa/proskima/proskima.owl#MappingLevel>,
+        <http://www.qu.edu.qa/proskima/proskima.owl#mapsOccupationCompetency> some psk:Competency,
+        <http://www.qu.edu.qa/proskima/proskima.owl#hasMappingLevel> exactly 1 <http://www.qu.edu.qa/proskima/proskima.owl#MappingLevel>,
+        <http://www.qu.edu.qa/proskima/proskima.owl#mapsOccupationCompetency> exactly 2 psk:Competency,
+        <http://www.qu.edu.qa/proskima/proskima.owl#hasMappingLevelWeight> some xsd:double
+    
+    HasKey: 
+        psk:code
+    
+    
+Class: <http://www.qu.edu.qa/proskima/proskima.owl#ImportanceLevel>
+
+    EquivalentTo: 
+        {<http://www.qu.edu.qa/proskima/proskima.owl#Desired> , <http://www.qu.edu.qa/proskima/proskima.owl#Preferred> , <http://www.qu.edu.qa/proskima/proskima.owl#Required>}
+    
+    
+Class: <http://www.qu.edu.qa/proskima/proskima.owl#MappingLevel>
+
+    EquivalentTo: 
+        {<http://www.qu.edu.qa/proskima/proskima.owl#Average> , <http://www.qu.edu.qa/proskima/proskima.owl#Strong> , <http://www.qu.edu.qa/proskima/proskima.owl#Weak>}
+    
+    
+Class: <http://www.qu.edu.qa/proskima/proskima.owl#Matched>
+
+    EquivalentTo: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#MatchingOutcome>
+         and (<http://www.qu.edu.qa/proskima/proskima.owl#hasMatchingState> only <http://www.qu.edu.qa/proskima/proskima.owl#MatchingState>)
+         and (<http://www.qu.edu.qa/proskima/proskima.owl#hasMatchingState> exactly 2 owl:Thing)
+    
+    SubClassOf: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#MatchingOutcome>
+    
+    
+Class: <http://www.qu.edu.qa/proskima/proskima.owl#MatchingOutcome>
+
+    SubClassOf: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#hasMatchingResult> some ({<http://www.qu.edu.qa/proskima/proskima.owl#Fit> , <http://www.qu.edu.qa/proskima/proskima.owl#Not_Fit> , <http://www.qu.edu.qa/proskima/proskima.owl#Partially_Fit>}),
+        <http://www.qu.edu.qa/proskima/proskima.owl#hasScore> some xsd:integer,
+        <http://www.qu.edu.qa/proskima/proskima.owl#hasScore> exactly 1 xsd:integer
+    
+    HasKey: 
+        psk:id
+    
+    
+Class: <http://www.qu.edu.qa/proskima/proskima.owl#MatchingState>
+
+    EquivalentTo: 
+        {<http://www.qu.edu.qa/proskima/proskima.owl#Matched> , <http://www.qu.edu.qa/proskima/proskima.owl#NotMatched>}
+    
+    
+Class: <http://www.qu.edu.qa/proskima/proskima.owl#NotMatched>
+
+    EquivalentTo: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#MatchingOutcome>
+         and (<http://www.qu.edu.qa/proskima/proskima.owl#hasMatchingState> only <http://www.qu.edu.qa/proskima/proskima.owl#MatchingState>)
+         and (<http://www.qu.edu.qa/proskima/proskima.owl#hasMatchingState> exactly 1 <http://www.qu.edu.qa/proskima/proskima.owl#MatchingState>)
+    
+    SubClassOf: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#MatchingOutcome>
+    
+    
+Class: owl:Thing
+
+    
+Class: psk:Ability
+
+    SubClassOf: 
+        psk:Competency
+    
+    
+Class: psk:Competency
+
+    SubClassOf: 
+        psk:isSubCompetencyOf max 1 psk:Competency
+    
+    HasKey: 
+        psk:code
+    
+    
+Class: psk:CompetencyLevel
+
+    EquivalentTo: 
+        {psk:Capable , psk:Competent , psk:Knowing}
+    
+    SubClassOf: 
+        psk:equivalentToGrade some psk:Grade,
+        psk:forCompetencyRequirement some psk:CompetencyRequirement
+    
+    HasKey: 
+        psk:code
+    
+    
+Class: psk:CompetencyRequirement
+
+    SubClassOf: 
+        psk:forCompetency some psk:Competency,
+        <http://www.qu.edu.qa/proskima/proskima.owl#hasImportanceLevel> some <http://www.qu.edu.qa/proskima/proskima.owl#ImportanceLevel>,
+        <http://www.qu.edu.qa/proskima/proskima.owl#hasImportanceLevel> exactly 1 <http://www.qu.edu.qa/proskima/proskima.owl#ImportanceLevel>,
+        psk:forCompetency max 1 psk:Competency,
+        psk:requiresCompetencyLevel max 1 psk:CompetencyLevel,
+        <http://www.qu.edu.qa/proskima/proskima.owl#hasCompetencyLevelWeight> some xsd:double,
+        <http://www.qu.edu.qa/proskima/proskima.owl#hasImportanceLevelWeight> some xsd:double
+    
+    HasKey: 
+        psk:code
+    
+    
+Class: psk:Course
+
+    SubClassOf: 
+        psk:generatesLearningOutcome some psk:LearningOutcome
+    
+    HasKey: 
+        psk:code
+    
+    
+Class: psk:Enrolment
+
+    SubClassOf: 
+        psk:inCourse some psk:Course,
+        psk:isPartOfTranscript some psk:Transcript,
+        <http://www.qu.edu.qa/proskima/proskima.owl#gradedCompetency> some psk:Competency,
+        psk:hasGrade max 1 psk:Grade,
+        psk:inCourse max 1 psk:Course,
+        psk:isPartOfTranscript max 1 psk:Transcript
+    
+    HasKey: 
+        psk:id
+    
+    
+Class: psk:Grade
+
+    EquivalentTo: 
+        {psk:A , psk:B , psk:C , psk:D , psk:F}
+    
+    SubClassOf: 
+        psk:forEnrolment max 1 psk:Enrolment,
+        psk:isEquivalentToCompetencyLevel max 1 psk:CompetencyLevel
+    
+    HasKey: 
+        psk:code
+    
+    
+Class: psk:Knowledge
+
+    SubClassOf: 
+        psk:Competency
+    
+    
+Class: psk:LearningOutcome
+
+    SubClassOf: 
+        psk:equivalentToCompetency max 1 psk:Competency
+    
+    HasKey: 
+        psk:code
+    
+    
+Class: psk:Occupation
+
+    SubClassOf: 
+        psk:hasCompetencyRequirement some psk:CompetencyRequirement
+    
+    HasKey: 
+        psk:code
+    
+    
+Class: psk:Skill
+
+    SubClassOf: 
+        psk:Competency
+    
+    
+Class: psk:Student
+
+    SubClassOf: 
+        psk:hasTranscript some psk:Transcript,
+        psk:selects some psk:StudyPlan,
+        <http://www.qu.edu.qa/proskima/proskima.owl#hasApplication> some <http://www.qu.edu.qa/proskima/proskima.owl#Application>,
+        psk:hasTranscript max 1 psk:Transcript,
+        psk:selects max 1 psk:StudyPlan
+    
+    HasKey: 
+        psk:id
+    
+    
+Class: psk:StudyPlan
+
+    SubClassOf: 
+        psk:consistsOfCourse some psk:Course
+    
+    HasKey: 
+        psk:code
+    
+    
+Class: psk:Transcript
+
+    SubClassOf: 
+        psk:belongsToStudent some psk:Student,
+        psk:consistsOfEnrolment some psk:Enrolment,
+        psk:belongsToStudent max 1 psk:Student
+    
+    HasKey: 
+        psk:id
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/people.owl#Student_John_746>
+
+    Types: 
+        psk:Student
+    
+    Facts:  
+     psk:hasTranscript  <http://www.qu.edu.qa/proskima/proskima.owl#Transcript_John_245>,
+     psk:selects  <http://www.qu.edu.qa/proskima/proskima.owl#StudyPlan_CS_BSC_1>,
+     <http://www.qu.edu.qa/proskima/proskima.owl#hasApplication>  <http://www.qu.edu.qa/proskima/proskima.owl#Application_John_1>,
+     <http://www.qu.edu.qa/proskima/proskima.owl#hasApplication>  <http://www.qu.edu.qa/proskima/proskima.owl#Application_John_2>,
+     psk:id  "746"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Application_John_1>
+
+    Types: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#Application>
+    
+    Facts:  
+     <http://www.qu.edu.qa/proskima/proskima.owl#forOccupation>  <http://www.qu.edu.qa/proskima/proskima.owl#Occupation_Mathematician>,
+     <http://www.qu.edu.qa/proskima/proskima.owl#hasMatchingOutcome>  <http://www.qu.edu.qa/proskima/proskima.owl#MatchingOutcome_John_1>,
+     psk:code  "625"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Application_John_2>
+
+    Types: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#Application>
+    
+    Facts:  
+     <http://www.qu.edu.qa/proskima/proskima.owl#forOccupation>  <http://www.qu.edu.qa/proskima/proskima.owl#Occupation_Network_Engineer>,
+     <http://www.qu.edu.qa/proskima/proskima.owl#hasMatchingOutcome>  <http://www.qu.edu.qa/proskima/proskima.owl#MatchingOutcome_John_2>
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Average>
+
+    Types: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#MappingLevel>
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#CompetencyMapping_1>
+
+    Types: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#CompetencyMapping>
+    
+    Facts:  
+     <http://www.qu.edu.qa/proskima/proskima.owl#hasMappingLevel>  <http://www.qu.edu.qa/proskima/proskima.owl#Strong>,
+     <http://www.qu.edu.qa/proskima/proskima.owl#mapsOccupationCompetency>  <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Skill_3>,
+     <http://www.qu.edu.qa/proskima/proskima.owl#mapsStudentCompetency>  <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Ability_2>,
+     <http://www.qu.edu.qa/proskima/proskima.owl#hasMappingLevelWeight>  "0.3"^^xsd:double
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#CompetencyRequirement_1_Programmer>
+
+    Types: 
+        psk:CompetencyRequirement
+    
+    Facts:  
+     psk:forCompetency  <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Ability_1>,
+     psk:requiresCompetencyLevel  psk:Competent,
+     psk:code  "149"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#CompetencyRequirement_2_Programmer>
+
+    Types: 
+        psk:CompetencyRequirement
+    
+    Facts:  
+     psk:forCompetency  <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Knowledge_1>,
+     psk:requiresCompetencyLevel  psk:Capable,
+     psk:code  "134"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#CompetencyRequirement_3_Mathematician>
+
+    Types: 
+        psk:CompetencyRequirement
+    
+    Facts:  
+     psk:forCompetency  <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Ability_2>,
+     psk:requiresCompetencyLevel  psk:Knowing,
+     <http://www.qu.edu.qa/proskima/proskima.owl#hasImportanceLevel>  <http://www.qu.edu.qa/proskima/proskima.owl#Required>,
+     psk:code  "176"^^xsd:string,
+     <http://www.qu.edu.qa/proskima/proskima.owl#hasCompetencyLevelWeight>  "0.4"^^xsd:double,
+     <http://www.qu.edu.qa/proskima/proskima.owl#hasImportanceLevelWeight>  "0.3"^^xsd:double
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#CompetencyRequirement_3_Programmer>
+
+    Types: 
+        psk:CompetencyRequirement
+    
+    Facts:  
+     psk:forCompetency  <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Ability_3>,
+     psk:requiresCompetencyLevel  psk:Competent,
+     psk:code  "188"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#CompetencyRequirement_4_Mathematician>
+
+    Types: 
+        psk:CompetencyRequirement
+    
+    Facts:  
+     psk:forCompetency  <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Skill_2>,
+     psk:requiresCompetencyLevel  psk:Competent,
+     psk:code  "128"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#CompetencyRequirement_5_Network_Engineer>
+
+    Types: 
+        psk:CompetencyRequirement
+    
+    Facts:  
+     psk:forCompetency  <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Ability_4>,
+     psk:requiresCompetencyLevel  psk:Competent,
+     psk:code  "187"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#CompetencyRequirement_6_Mathematian>
+
+    Types: 
+        psk:CompetencyRequirement
+    
+    Facts:  
+     psk:forCompetency  <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Skill_3>,
+     psk:requiresCompetencyLevel  psk:Knowing,
+     <http://www.qu.edu.qa/proskima/proskima.owl#hasImportanceLevel>  <http://www.qu.edu.qa/proskima/proskima.owl#Desired>,
+     psk:code  "144"^^xsd:string,
+     <http://www.qu.edu.qa/proskima/proskima.owl#hasCompetencyLevelWeight>  "0.1"^^xsd:double,
+     <http://www.qu.edu.qa/proskima/proskima.owl#hasImportanceLevelWeight>  "0.7"^^xsd:double
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#CompetencyRequirement_7_Mathematian>
+
+    Types: 
+        psk:CompetencyRequirement
+    
+    Facts:  
+     psk:forCompetency  <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Knowledge_2>,
+     psk:requiresCompetencyLevel  psk:Competent,
+     <http://www.qu.edu.qa/proskima/proskima.owl#hasImportanceLevel>  <http://www.qu.edu.qa/proskima/proskima.owl#Preferred>,
+     psk:code  "129"^^xsd:string,
+     <http://www.qu.edu.qa/proskima/proskima.owl#hasCompetencyLevelWeight>  "0.2"^^xsd:double,
+     <http://www.qu.edu.qa/proskima/proskima.owl#hasImportanceLevelWeight>  "0.6"^^xsd:double
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Ability_1>
+
+    Types: 
+        psk:Ability
+    
+    Facts:  
+     psk:code  "435"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Ability_2>
+
+    Types: 
+        psk:Ability
+    
+    Facts:  
+     psk:code  "481"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Ability_3>
+
+    Types: 
+        psk:Ability
+    
+    Facts:  
+     psk:code  "462"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Ability_4>
+
+    Types: 
+        psk:Ability
+    
+    Facts:  
+     psk:code  "429"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Knowledge_1>
+
+    Types: 
+        psk:Knowledge
+    
+    Facts:  
+     psk:code  "434"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Knowledge_2>
+
+    Types: 
+        psk:Knowledge
+    
+    Facts:  
+     psk:code  "455"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Skill_1>
+
+    Types: 
+        psk:Skill
+    
+    Facts:  
+     psk:code  "422"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Skill_2>
+
+    Types: 
+        psk:Skill
+    
+    Facts:  
+     psk:code  "479"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Skill_3>
+
+    Types: 
+        psk:Skill
+    
+    Facts:  
+     psk:code  "421"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Course_Discrete_Mathematics>
+
+    Types: 
+        psk:Course
+    
+    Facts:  
+     psk:generatesLearningOutcome  <http://www.qu.edu.qa/proskima/proskima.owl#LearningOutcome_2>,
+     psk:generatesLearningOutcome  <http://www.qu.edu.qa/proskima/proskima.owl#LearningOutcome_4>,
+     psk:generatesLearningOutcome  <http://www.qu.edu.qa/proskima/proskima.owl#LearningOutcome_6>,
+     psk:id  "495"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Course_Programming_Principles>
+
+    Types: 
+        psk:Course
+    
+    Facts:  
+     psk:generatesLearningOutcome  <http://www.qu.edu.qa/proskima/proskima.owl#LearningOutcome_1>,
+     psk:generatesLearningOutcome  <http://www.qu.edu.qa/proskima/proskima.owl#LearningOutcome_3>,
+     psk:generatesLearningOutcome  <http://www.qu.edu.qa/proskima/proskima.owl#LearningOutcome_5>,
+     psk:generatesLearningOutcome  <http://www.qu.edu.qa/proskima/proskima.owl#LearningOutcome_7>,
+     psk:id  "472"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Desired>
+
+    Types: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#ImportanceLevel>
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Enrollment_John_324>
+
+    Types: 
+        psk:Enrolment
+    
+    Facts:  
+     psk:hasGrade  psk:A,
+     psk:inCourse  <http://www.qu.edu.qa/proskima/proskima.owl#Course_Programming_Principles>,
+     psk:id  "324"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Enrollment_John_367>
+
+    Types: 
+        psk:Enrolment
+    
+    Facts:  
+     psk:hasGrade  psk:B,
+     psk:inCourse  <http://www.qu.edu.qa/proskima/proskima.owl#Course_Discrete_Mathematics>,
+     psk:id  "367"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Enrollment_Simon_348>
+
+    Types: 
+        psk:Enrolment
+    
+    Facts:  
+     psk:hasGrade  psk:C,
+     psk:inCourse  <http://www.qu.edu.qa/proskima/proskima.owl#Course_Programming_Principles>,
+     psk:id  "348"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Enrollment_Simon_358>
+
+    Types: 
+        psk:Enrolment
+    
+    Facts:  
+     psk:hasGrade  psk:D,
+     psk:inCourse  <http://www.qu.edu.qa/proskima/proskima.owl#Course_Discrete_Mathematics>,
+     psk:id  "358"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Fit>
+
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#LearningOutcome_1>
+
+    Types: 
+        psk:LearningOutcome
+    
+    Facts:  
+     psk:equivalentToCompetency  <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Skill_1>
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#LearningOutcome_2>
+
+    Types: 
+        psk:LearningOutcome
+    
+    Facts:  
+     psk:equivalentToCompetency  <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Skill_2>
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#LearningOutcome_3>
+
+    Types: 
+        psk:LearningOutcome
+    
+    Facts:  
+     psk:equivalentToCompetency  <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Ability_1>
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#LearningOutcome_4>
+
+    Types: 
+        psk:LearningOutcome
+    
+    Facts:  
+     psk:equivalentToCompetency  <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Ability_2>
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#LearningOutcome_5>
+
+    Types: 
+        psk:LearningOutcome
+    
+    Facts:  
+     psk:equivalentToCompetency  <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Knowledge_1>
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#LearningOutcome_6>
+
+    Types: 
+        psk:LearningOutcome
+    
+    Facts:  
+     psk:equivalentToCompetency  <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Knowledge_2>
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#LearningOutcome_7>
+
+    Types: 
+        psk:LearningOutcome
+    
+    Facts:  
+     psk:equivalentToCompetency  <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Ability_3>
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Matched>
+
+    Types: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#MatchingState>
+    
+    DifferentFrom: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#NotMatched>
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#MatchingOutcome_John_1>
+
+    Types: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#MatchingOutcome>
+    
+    Facts:  
+     <http://www.qu.edu.qa/proskima/proskima.owl#hasMatchingState>  <http://www.qu.edu.qa/proskima/proskima.owl#NotMatched>,
+     psk:id  "654"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#MatchingOutcome_John_2>
+
+    Types: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#MatchingOutcome>,
+        <http://www.qu.edu.qa/proskima/proskima.owl#hasMatchingState> only ({<http://www.qu.edu.qa/proskima/proskima.owl#NotMatched>})
+    
+    Facts:  
+     <http://www.qu.edu.qa/proskima/proskima.owl#hasMatchingState>  <http://www.qu.edu.qa/proskima/proskima.owl#NotMatched>,
+     psk:id  "651"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#NotMatched>
+
+    Types: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#MatchingState>
+    
+    DifferentFrom: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#Matched>
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Not_Fit>
+
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Occupation_Mathematician>
+
+    Types: 
+        psk:Occupation,
+        <http://www.qu.edu.qa/proskima/proskima.owl#requiresCompetency> only ({<http://www.qu.edu.qa/proskima/proskima.owl#Competency_Ability_2> , <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Knowledge_2> , <http://www.qu.edu.qa/proskima/proskima.owl#Competency_Skill_3>})
+    
+    Facts:  
+     psk:hasCompetencyRequirement  <http://www.qu.edu.qa/proskima/proskima.owl#CompetencyRequirement_3_Mathematician>,
+     psk:hasCompetencyRequirement  <http://www.qu.edu.qa/proskima/proskima.owl#CompetencyRequirement_6_Mathematian>,
+     psk:hasCompetencyRequirement  <http://www.qu.edu.qa/proskima/proskima.owl#CompetencyRequirement_7_Mathematian>,
+     psk:code  "588"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Occupation_Network_Engineer>
+
+    Types: 
+        psk:Occupation
+    
+    Facts:  
+     psk:hasCompetencyRequirement  <http://www.qu.edu.qa/proskima/proskima.owl#CompetencyRequirement_5_Network_Engineer>,
+     psk:code  "582"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Occupation_Programmer>
+
+    Types: 
+        psk:Occupation
+    
+    Facts:  
+     psk:hasCompetencyRequirement  <http://www.qu.edu.qa/proskima/proskima.owl#CompetencyRequirement_1_Programmer>,
+     psk:hasCompetencyRequirement  <http://www.qu.edu.qa/proskima/proskima.owl#CompetencyRequirement_2_Programmer>,
+     psk:hasCompetencyRequirement  <http://www.qu.edu.qa/proskima/proskima.owl#CompetencyRequirement_3_Programmer>,
+     psk:code  "568"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Partially_Fit>
+
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Preferred>
+
+    Types: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#ImportanceLevel>
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Required>
+
+    Types: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#ImportanceLevel>
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Strong>
+
+    Types: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#MappingLevel>
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Student_Simon_768>
+
+    Types: 
+        psk:Student
+    
+    Facts:  
+     psk:hasTranscript  <http://www.qu.edu.qa/proskima/proskima.owl#Transcript_Simon_291>,
+     psk:id  "768"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#StudyPlan_CS_BSC_1>
+
+    Types: 
+        psk:StudyPlan
+    
+    Facts:  
+     psk:consistsOfCourse  <http://www.qu.edu.qa/proskima/proskima.owl#Course_Discrete_Mathematics>,
+     psk:consistsOfCourse  <http://www.qu.edu.qa/proskima/proskima.owl#Course_Programming_Principles>,
+     psk:id  "657"^^xsd:string
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Transcript_John_245>
+
+    Types: 
+        psk:Transcript
+    
+    Facts:  
+     psk:consistsOfEnrolment  <http://www.qu.edu.qa/proskima/proskima.owl#Enrollment_John_367>,
+     psk:id  "245"^^xsd:string
+    
+    DifferentFrom: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#Transcript_Simon_291>
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Transcript_Simon_291>
+
+    Types: 
+        psk:Transcript
+    
+    Facts:  
+     psk:consistsOfEnrolment  <http://www.qu.edu.qa/proskima/proskima.owl#Enrollment_Simon_348>,
+     psk:consistsOfEnrolment  <http://www.qu.edu.qa/proskima/proskima.owl#Enrollment_Simon_358>,
+     psk:id  "291"^^xsd:string
+    
+    DifferentFrom: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#Transcript_John_245>
+    
+    
+Individual: <http://www.qu.edu.qa/proskima/proskima.owl#Weak>
+
+    Types: 
+        <http://www.qu.edu.qa/proskima/proskima.owl#MappingLevel>
+    
+    
+Individual: psk:A
+
+    Types: 
+        psk:Grade
+    
+    
+Individual: psk:B
+
+    Types: 
+        psk:Grade
+    
+    
+Individual: psk:C
+
+    Types: 
+        psk:Grade
+    
+    
+Individual: psk:Capable
+
+    Facts:  
+     psk:equivalentToGrade  psk:B,
+     psk:equivalentToGrade  psk:C
+    
+    
+Individual: psk:Competent
+
+    Facts:  
+     psk:equivalentToGrade  psk:A
+    
+    
+Individual: psk:D
+
+    Types: 
+        psk:Grade
+    
+    
+Individual: psk:F
+
+    Types: 
+        psk:Grade
+    
+    
+Individual: psk:Knowing
+
+    Facts:  
+     psk:equivalentToGrade  psk:D
+    
+    
+DisjointClasses: 
+    psk:Competency,psk:CompetencyLevel,psk:CompetencyRequirement,psk:Course,psk:Enrolment,psk:Grade,psk:LearningOutcome,psk:Occupation,psk:Student,psk:StudyPlan,psk:Transcript,<http://www.qu.edu.qa/proskima/proskima.owl#Application>,<http://www.qu.edu.qa/proskima/proskima.owl#CompetencyMapping>,<http://www.qu.edu.qa/proskima/proskima.owl#ImportanceLevel>,<http://www.qu.edu.qa/proskima/proskima.owl#MappingLevel>,<http://www.qu.edu.qa/proskima/proskima.owl#MatchingOutcome>,<http://www.qu.edu.qa/proskima/proskima.owl#MatchingState>
+
+Rule: 
+    psk:Occupation(?o), psk:hasCompetencyRequirement(?o, ?r), psk:forCompetency(?r, ?c) -> <http://www.qu.edu.qa/proskima/proskima.owl#requiresCompetency>(?o, ?c)
+
+Rule: 
+    psk:Student(?<#s>), psk:hasTranscript(?<#s>, ?<#t>), psk:consistsOfEnrolment(?<#t>, ?<#enrolment>), psk:inCourse(?<#enrolment>, ?<#course>), psk:generatesLearningOutcome(?<#course>, ?<#lo>), psk:equivalentToCompetency(?<#lo>, ?<#competency>) -> <http://www.qu.edu.qa/proskima/proskima.owl#is-An-EnrolmentForCompetency>(?<#enrolment>, ?<#competency>)
+
+Rule: 
+    <http://www.qu.edu.qa/proskima/proskima.owl#hasMatchingOutcome>(?a, ?matchingResult), psk:Student(?s), <http://www.qu.edu.qa/proskima/proskima.owl#CompetencyMapping>(?cm), <http://www.qu.edu.qa/proskima/proskima.owl#forOccupation>(?a, ?o), <http://www.qu.edu.qa/proskima/proskima.owl#hasGainedCompetency>(?s, ?c1), <http://www.qu.edu.qa/proskima/proskima.owl#hasApplication>(?s, ?a), <http://www.qu.edu.qa/proskima/proskima.owl#mapsOccupationCompetency>(?cm, ?c2), <http://www.qu.edu.qa/proskima/proskima.owl#mapsStudentCompetency>(?cm, ?c1) -> <http://www.qu.edu.qa/proskima/proskima.owl#hasMatchedCompetency>(?matchingResult, ?c2)
+
+Rule: 
+    psk:Student(?s), psk:hasTranscript(?s, ?t), psk:consistsOfEnrolment(?t, ?e), psk:inCourse(?e, ?course), psk:generatesLearningOutcome(?course, ?lo), psk:equivalentToCompetency(?lo, ?competency) -> <http://www.qu.edu.qa/proskima/proskima.owl#hasGainedCompetency>(?s, ?competency)
+
+Rule: 
+    <http://www.qu.edu.qa/proskima/proskima.owl#hasMatchingOutcome>(?a, ?matchingResult), psk:Student(?s),  SameAs (?c1, ?c2), <http://www.qu.edu.qa/proskima/proskima.owl#forOccupation>(?a, ?o), <http://www.qu.edu.qa/proskima/proskima.owl#hasGainedCompetency>(?s, ?c1), <http://www.qu.edu.qa/proskima/proskima.owl#hasApplication>(?s, ?a), <http://www.qu.edu.qa/proskima/proskima.owl#requiresCompetency>(?o, ?c2) -> <http://www.qu.edu.qa/proskima/proskima.owl#hasMatchedCompetency>(?matchingResult, ?c1)
+
+Rule: 
+    <http://www.qu.edu.qa/proskima/proskima.owl#Application>(?a), <http://www.qu.edu.qa/proskima/proskima.owl#forOccupation>(?a, ?o1), <http://www.qu.edu.qa/proskima/proskima.owl#hasMatchingOutcome>(?a, ?mo), ((<http://www.qu.edu.qa/proskima/proskima.owl#is-An-OccupationForApplication> some <http://www.qu.edu.qa/proskima/proskima.owl#Application>) and (<http://www.qu.edu.qa/proskima/proskima.owl#requiresCompetency> only (<http://www.qu.edu.qa/proskima/proskima.owl#belongsToMatchingOutcome> some <http://www.qu.edu.qa/proskima/proskima.owl#MatchingOutcome>)))(?o2),  SameAs (?o1, ?o2) -> <http://www.qu.edu.qa/proskima/proskima.owl#hasMatchingResult>(?mo, <http://www.qu.edu.qa/proskima/proskima.owl#Fit>)
+
+Rule: 
+    <http://www.qu.edu.qa/proskima/proskima.owl#NotMatched>(?mo) -> <http://www.qu.edu.qa/proskima/proskima.owl#hasMatchingResult>(?mo, <http://www.qu.edu.qa/proskima/proskima.owl#Not_Fit>)
+
